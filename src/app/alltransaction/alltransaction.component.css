@@ -26,6 +26,14 @@
     transform: scale(1.1); /* Fait grossir le bouton lorsqu'il est survolé */
   }
   
+  .description {
+    font-size: 1.5em;
+    color: rgb(11, 2, 2);
+    margin-top: 20px;
+    font-family: "Cursive", Brush Script MT;
+    font-size: 3em;
+    text-align: center;
+  }
 
   
   

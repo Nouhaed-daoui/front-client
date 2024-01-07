@@ -10,13 +10,19 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { AlltransactionComponent } from './alltransaction/alltransaction.component';
+import { TransfertComponent } from './transfert/transfert.component';
+import { HomeComponent } from './home/home.component';
+import { AlltransactionextourneComponent } from './alltransactionextourne/alltransactionextourne.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WalletComponent,
     NavbarComponent,
-    AlltransactionComponent
+    AlltransactionComponent,
+    TransfertComponent,
+    HomeComponent,
+    AlltransactionextourneComponent
   ],
   imports: [
     BrowserModule,

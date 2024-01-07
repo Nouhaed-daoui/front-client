@@ -1,0 +1,49 @@
+/* home.component.css */
+
+.container {
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2em;
+    color: white;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre légère */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  img:hover {
+    transform: scale(1.05); /* Effet de zoom au survol */
+  }
+  
+  .btn-animated {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  .btn-animated:hover {
+    background-color: rgba(188, 171, 114, 0.875);
+    color: black;
+  }
+  
+  /* Ajoutez un style créatif pour la description de l'application */
+  .description {
+    font-size: 1.5em;
+    color: rgb(11, 2, 2);
+    margin-top: 20px;
+    font-family: "Cursive", Brush Script MT;
+    font-size: 3em;
+  }
