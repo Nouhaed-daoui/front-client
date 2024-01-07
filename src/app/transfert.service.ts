@@ -13,7 +13,8 @@ export class TransfertService {
   constructor(private http: HttpClient) {}
 
   performTransfert(data: any): Observable<any> {
+    const jsonString = JSON.stringify(data);
     // Assurez-vous d'ajuster la logique pour envoyer les données au backend
-    return this.http.post<any>(this.apiUrl, data);
+    return this.http.post<any>(this.apiUrl, jsonString);
   }
 }

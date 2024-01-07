@@ -13,15 +13,21 @@ export class TransactionService {
   constructor(private http: HttpClient) {}
 
   getTransactions(email: string, password: string): Observable<any[]> {
-    // Assurez-vous d'ajuster la logique pour envoyer les identifiants au backend
-    // et récupérer les transactions
-    const url = `${this.apiUrl}?email=${email}&password=${password}`;
-    return this.http.get<any[]>(url);
+    const data = {
+      email: email,
+      password: password,
+    };
+
+    const jsonString = JSON.stringify(data);
+
+    return this.http.post<any[]>(`${this.apiUrl}/transactions`, jsonString);
   }
 
+  
+
   annulerTransaction(transaction: any): Observable<any> {
-    // Adaptez cette logique en fonction du backend
-    const url = `${this.apiUrl}/annuler-transaction`;
-    return this.http.post(url, transaction);
+    const jsonString = JSON.stringify(transaction);
+
+    return this.http.post<any>(`${this.apiUrl}/annuler-transaction`, jsonString);
   }
 }

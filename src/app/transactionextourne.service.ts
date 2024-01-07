@@ -11,12 +11,26 @@ export class TransactionextourneService {
 
   constructor(private http: HttpClient) {}
 
-  getTransactionsextourne(email: string, password: string): Observable<any[]> {
-    // Assurez-vous d'ajuster la logique pour envoyer les identifiants au backend
-    // et récupérer les transactions
-    const url = `${this.apiUrl}?email=${email}&password=${password}`;
-    return this.http.get<any[]>(url);
-  }
+  // getTransactionsextourne(email: string, password: string): Observable<any[]> {
+  //   // Assurez-vous d'ajuster la logique pour envoyer les identifiants au backend
+  //   // et récupérer les transactions
+  //   const url = `${this.apiUrl}?email=${email}&password=${password}`;
+  //   return this.http.get<any[]>(url);
+  // } 
 
+
+  getTransactionsextourne(email: string, password: string): Observable<any[]> {
+    const data = {
+      email: email,
+      password: password,
+    };
+  
+    const jsonString = JSON.stringify(data);
+  
+    // Assurez-vous d'ajuster la logique pour envoyer les données au backend
+    return this.http.post<any[]>(`${this.apiUrl}/transactions`, jsonString);
+  }
+  
+  
   
 }

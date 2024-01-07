@@ -12,7 +12,16 @@ export class WalletService {
 
   constructor(private http: HttpClient) {}
 
+  // getWalletBalance(email: string, password: string): Observable<number> {
+  //   return this.http.post<number>(`${this.apiUrl}/wallet/amount`, { email, password });
+  // }
   getWalletBalance(email: string, password: string): Observable<number> {
-    return this.http.post<number>(`${this.apiUrl}/wallet/amount`, { email, password });
+    const data = {
+      email: email,
+      password: password,
+    };
+    const jsonString = JSON.stringify(data);
+
+    return this.http.post<number>(`${this.apiUrl}/wallet/amount`, jsonString);
   }
 }
