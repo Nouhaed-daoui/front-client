@@ -1,0 +1,40 @@
+<!-- alltransaction.component.html -->
+<div class="container mt-4 custom-container-bg">
+<form (ngSubmit)="getTransactions()" class="custom-form-bg text-white p-4 shadow-sm rounded">
+        
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <p>  </p>
+      <input type="text" id="email" [(ngModel)]="email" name="email" class="form-control bg-white text-dark custom-input" required>
+    </div>
+    <p> </p>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <p> </p>
+      <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control bg-white text-dark custom-input" required>
+    </div>
+      <p> </p>
+       <p> </p>
+
+    <button type="submit" class="btn btn-light btn-animated mt-3">Voir mes transactions</button>
+  </form>
+  
+    <table *ngIf="showTable" class="table mt-3">
+      <thead>
+        <tr>
+          <th>Email du bénéficiaire</th>
+          <th>Montant</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactions">
+          <td>{{ transaction.beneficiaryEmail }}</td>
+          <td>{{ transaction.amount }}</td>
+          <td>{{ transaction.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+</div>

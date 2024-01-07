@@ -1,0 +1,49 @@
+.custom-container-bg {
+    background-color: #f8f9fa;
+  }
+  
+  .custom-form-bg {
+    background-color: #343a40;
+  }
+  
+  .custom-font {
+    font-family: 'Monospace', Monaco; /* Remplacez par la police de caractères souhaitée */
+  }
+  
+
+  
+  
+  .custom-input {
+    border: 1px solid #ced4da; /* Ajoute une bordure grise aux champs de saisie */
+    border-radius: 0.25rem; /* Arrondit légèrement les coins des champs de saisie */
+  }
+  
+  .btn-animated {
+    transition: all 0.3s ease; /* Ajoute une transition animée à tous les styles de bouton */
+  }
+  
+  .btn-animated:hover {
+    transform: scale(1.1); /* Fait grossir le bouton lorsqu'il est survolé */
+  }
+  
+
+  
+  
+  .special-balance {
+    border: 2px solid #00ff48; /* Couleur de bordure orange */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px; /* Ajoute un espace intérieur */
+    text-align: center; /* Centre le texte */
+    font-size: 1.2em; /* Taille de police plus grande */
+    animation: blink 1s infinite alternate; /* Animation de clignotement */
+    font-family: 'Monospace', Monaco; 
+  
+    /* Ajoutez d'autres styles si nécessaire */
+  }
+  
+  @keyframes blink {
+    to {
+      background-color: #00ff9d; /* Couleur de fond jaune clair pendant l'animation */
+    }
+  }
+  

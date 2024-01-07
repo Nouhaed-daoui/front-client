@@ -1,0 +1,31 @@
+
+<div class="container mt-4 custom-container-bg">
+    <form (ngSubmit)="onSubmit()" class="custom-form-bg text-white p-4 shadow-sm rounded">
+        
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <p>  </p>
+        <input type="text" id="email" [(ngModel)]="email" name="email" class="form-control bg-white text-dark custom-input" required>
+      </div>
+      <p> </p>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <p> </p>
+        <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control bg-white text-dark custom-input" required>
+      </div>
+        <p> </p>
+         <p> </p>
+
+      <button type="submit" class="btn btn-light btn-animated mt-3">Obtenir le solde</button>
+    </form>
+
+    <div class="mt-5 special-balance">
+       <h3> Solde de votre wallet: {{ amount }} DHS  </h3>
+      </div>
+<p>
+
+</p>
+
+  </div>
+  
