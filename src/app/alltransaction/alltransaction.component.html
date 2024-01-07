@@ -28,6 +28,7 @@
           <th>Email du bénéficiaire</th>
           <th>Montant</th>
           <th>Date</th>
+          <th>Restitution du montant </th>
         </tr>
       </thead>
       <tbody>
@@ -35,6 +36,11 @@
           <td>{{ transaction.beneficiaryEmail }}</td>
           <td>{{ transaction.amount }}</td>
           <td>{{ transaction.date }}</td>
+          <td>
+            <button class="btn btn-danger btn-animated" (click)="annulerTransaction(transaction)">
+              Annuler
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>

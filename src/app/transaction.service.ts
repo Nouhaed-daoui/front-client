@@ -18,4 +18,10 @@ export class TransactionService {
     const url = `${this.apiUrl}?email=${email}&password=${password}`;
     return this.http.get<any[]>(url);
   }
+
+  annulerTransaction(transaction: any): Observable<any> {
+    // Adaptez cette logique en fonction du backend
+    const url = `${this.apiUrl}/annuler-transaction`;
+    return this.http.post(url, transaction);
+  }
 }
