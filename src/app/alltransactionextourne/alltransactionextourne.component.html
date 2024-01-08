@@ -28,15 +28,15 @@
             <tr>
               <th>Email du bénéficiaire</th>
               <th>Montant</th>
-              <th>Date</th>
+              <!-- <th>Date</th> -->
               <th>Motif</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let transactionextourne of transactionsextournes">
-              <td>{{ transactionextourne.beneficiaryEmail }}</td>
+              <td>{{ transactionextourne.receiverEmail }}</td>
               <td>{{ transactionextourne.amount }}</td>
-              <td>{{ transactionextourne.date }}</td>
+              <!-- <td>{{ transactionextourne.date }}</td> -->
               <td>{{ transactionextourne.motif }}</td>
             </tr>
           </tbody>

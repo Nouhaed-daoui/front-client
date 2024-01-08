@@ -19,7 +19,7 @@ export class TransfertComponent {
     this.transfertService.performTransfert({
       senderEmail: this.senderEmail,
       senderPassword: this.senderPassword,
-      beneficiaryEmail: this.beneficiaryEmail,
+      receiverEmail: this.beneficiaryEmail,
       amount: this.amount,
     }).subscribe(response => {
       console.log(response); // Gérer la réponse de l'API selon vos besoins

@@ -12,7 +12,8 @@ import { WalletService } from '../wallet.service';
 export class WalletComponent {
   email: string = '';
   password: string = '';
-  amount: number = 0;
+  //amount: number = 0;
+  amount: number | null = null;
 
   constructor(private walletService: WalletService) {}
 

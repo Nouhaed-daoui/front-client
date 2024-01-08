@@ -27,15 +27,15 @@
         <tr>
           <th>Email du bénéficiaire</th>
           <th>Montant</th>
-          <th>Date</th>
+          
           <th>Restitution du montant </th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let transaction of transactions">
-          <td>{{ transaction.beneficiaryEmail }}</td>
+          <td>{{ transaction.receiverEmail }}</td>
           <td>{{ transaction.amount }}</td>
-          <td>{{ transaction.date }}</td>
+          <!-- <td>{{ transaction.date }}</td> -->
           <td>
             <button class="btn btn-danger btn-animated" (click)="annulerTransaction(transaction)">
               Annuler

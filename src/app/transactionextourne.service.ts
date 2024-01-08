@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient ,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TransactionextourneService {
 
-  private apiUrl = 'https://votre-api.com/transactionsextourne'; // Remplacez par l'URL de votre API
+  private apiUrl = 'http://localhost:8070/api/v1/client/extourne'; // Remplacez par l'URL de votre API
 
   constructor(private http: HttpClient) {}
 
@@ -24,11 +24,17 @@ export class TransactionextourneService {
       email: email,
       password: password,
     };
-  
+
     const jsonString = JSON.stringify(data);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      })
+    };
   
     // Assurez-vous d'ajuster la logique pour envoyer les données au backend
-    return this.http.post<any[]>(`${this.apiUrl}/transactions`, jsonString);
+    return this.http.post<any[]>(`${this.apiUrl}`, jsonString,httpOptions);
   }
   
   
