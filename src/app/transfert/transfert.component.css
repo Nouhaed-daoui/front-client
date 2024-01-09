@@ -34,3 +34,22 @@
     font-size: 3em;
     text-align: center;
   }
+
+  .danger-balance {
+    border: 2px solid  rgba(235, 156, 150, 0.875); /* Couleur de bordure orange */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px; /* Ajoute un espace intérieur */
+    text-align: center; /* Centre le texte */
+    font-size: 1.2em; /* Taille de police plus grande */
+    animation:  blinks 1s infinite alternate; /* Animation de clignotement */
+    font-family: 'Monospace', Monaco; 
+  
+    /* Ajoutez d'autres styles si nécessaire */
+  }
+
+
+  @keyframes blinks {
+    to {
+      background-color:  rgba(244, 191, 181, 0.875); /* Couleur de fond jaune clair pendant l'animation */
+    }
+  }

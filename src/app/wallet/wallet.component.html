@@ -26,6 +26,9 @@
       <div *ngIf="amount !== null" class="mt-5 special-balance">
         <h3> Solde de votre wallet: {{ amount }} DHS  </h3>
     </div>
+    <div *ngIf="error !== null" class=" mt-5 danger-balance text-danger">
+      {{ error }}
+    </div>
 <p>
 
 </p>

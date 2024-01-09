@@ -16,15 +16,27 @@ export class AlltransactionComponent {
   email: string = '';
   password: string = '';
   showTable: boolean = true; // Ajout de la variable showTable
+  error: string | null = null; // Ajout de la propriété error
+
 
   constructor(private transactionService: TransactionService) {}
 
+  
   getTransactions(): void {
     this.transactionService.getTransactions(this.email, this.password)
-      .subscribe(transactions => {
-        this.transactions = transactions;
-        this.showTable = true; // Afficher le tableau après la récupération des données
-      });
+      .subscribe(
+        transactions => {
+          this.transactions = transactions;
+          this.showTable = true;
+          this.error = null; // Réinitialiser l'erreur en cas de succès
+        },
+        error => {
+          console.error('Erreur lors de la récupération des transactions:', error);
+          this.transactions = []; // Réinitialiser les transactions en cas d'erreur
+          this.showTable = false; // Masquer le tableau en cas d'erreur
+          this.error = 'Email ou mot de passe incorrectes . Veuillez réessayer.'; // Définir le message d'erreur
+        }
+      );
   }
 
 

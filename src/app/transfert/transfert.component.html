@@ -4,6 +4,15 @@
     <h2 class="description">Effectuer un transfert</h2>
     <p> </p>
     <p> </p>
+    <p> </p>
+
+  <div *ngIf="error !== null" class="mt-5 danger-balance text-danger">
+    {{ error }}
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
   
     <form (ngSubmit)="onSubmit()" class="custom-form-bg text-white p-4 shadow-sm rounded">
       <div class="form-group">

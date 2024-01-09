@@ -10,6 +10,8 @@ import { WalletService } from '../wallet.service';
   styleUrls: ['./wallet.component.css']
 })
 export class WalletComponent {
+
+  error: string | null = null; // Ajout de la propriété error
   email: string = '';
   password: string = '';
   //amount: number = 0;
@@ -21,9 +23,11 @@ export class WalletComponent {
     this.walletService.getWalletBalance(this.email, this.password).subscribe(
       (amount: number) => {
         this.amount = amount;
+        this.error = null; 
       },
       (error) => {
         console.error('Erreur lors de la récupération du solde du portefeuille:', error);
+        this.error = 'Email ou mot de passe incorrectes . Veuillez réessayer.'; // Définir le message d'erreur
         // Gérez les erreurs selon vos besoins
       }
     );

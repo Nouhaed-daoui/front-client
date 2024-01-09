@@ -1,6 +1,16 @@
 <!-- alltransaction.component.html -->
 <div class="container mt-4 custom-container-bg">
 
+  <p> </p>
+
+  <div *ngIf="error !== null" class="mt-5 danger-balance text-danger">
+    {{ error }}
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+
     <h2 class="description">Transactions extournés</h2>
     <p></p>
     <form (ngSubmit)="getTransactions()" class="custom-form-bg text-white p-4 shadow-sm rounded">
