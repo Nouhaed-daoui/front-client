@@ -30,7 +30,7 @@
   
   
   .special-balance {
-    border: 2px solid #00ff48; /* Couleur de bordure orange */
+    border: 2px solid  rgba(188, 171, 114, 0.875); /* Couleur de bordure orange */
     border-radius: 5px; /* Coins arrondis */
     padding: 10px; /* Ajoute un espace intérieur */
     text-align: center; /* Centre le texte */
@@ -40,10 +40,36 @@
   
     /* Ajoutez d'autres styles si nécessaire */
   }
+
+  .danger-balance {
+    border: 2px solid  rgba(235, 156, 150, 0.875); /* Couleur de bordure orange */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px; /* Ajoute un espace intérieur */
+    text-align: center; /* Centre le texte */
+    font-size: 1.2em; /* Taille de police plus grande */
+    animation:  blinks 1s infinite alternate; /* Animation de clignotement */
+    font-family: 'Monospace', Monaco; 
+  
+    /* Ajoutez d'autres styles si nécessaire */
+  }
   
   @keyframes blink {
     to {
-      background-color: #00ff9d; /* Couleur de fond jaune clair pendant l'animation */
+      background-color:  rgba(188, 171, 114, 0.875); /* Couleur de fond jaune clair pendant l'animation */
+    }
+  }
+
+  @keyframes blinks {
+    to {
+      background-color:  rgba(244, 191, 181, 0.875); /* Couleur de fond jaune clair pendant l'animation */
     }
   }
   
+  .description {
+    font-size: 1.5em;
+    color: rgb(11, 2, 2);
+    margin-top: 20px;
+    font-family: "Cursive", Brush Script MT;
+    font-size: 3em;
+    text-align: center;
+  }

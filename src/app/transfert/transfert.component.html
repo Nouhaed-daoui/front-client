@@ -1,0 +1,42 @@
+<!-- transfert.component.html -->
+
+<div class="container mt-4 custom-container-bg"> 
+    <h2 class="description">Effectuer un transfert</h2>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+
+  <div *ngIf="error !== null" class="mt-5 danger-balance text-danger">
+    {{ error }}
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  
+    <form (ngSubmit)="onSubmit()" class="custom-form-bg text-white p-4 shadow-sm rounded">
+      <div class="form-group">
+        <label for="email">Votre Email:</label> 
+        <p> </p>
+        <input type="text" id="email" [(ngModel)]="senderEmail" name="email" class="form-control bg-white text-dark custom-input" required>
+      </div>
+      <p> </p>
+      <div class="form-group">
+        <label for="password">Votre Mot de passe:</label>
+        <input type="password" id="password" [(ngModel)]="senderPassword" name="password" class="form-control bg-white text-dark custom-input" required>
+      </div>
+      <p> </p>
+      <div class="form-group">
+        <label for="beneficiaryEmail">Email du bénéficiaire:</label>
+        <input type="text" id="beneficiaryEmail" [(ngModel)]="beneficiaryEmail" name="beneficiaryEmail" class="form-control bg-white text-dark custom-input" required>
+      </div>
+      <p> </p>
+      <div class="form-group">
+        <label for="amount">Montant:</label>
+        <input type="number" id="amount" [(ngModel)]="amount" name="amount" class="form-control bg-white text-dark custom-input" required>
+      </div>
+      <p> </p>
+      <button type="submit" class="btn btn-light btn-animated mt-3">Effectuer le transfert</button>
+    </form>
+  </div>
+  

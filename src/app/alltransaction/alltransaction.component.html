@@ -1,5 +1,15 @@
 <!-- alltransaction.component.html -->
 <div class="container mt-4 custom-container-bg">
+    <h2 class="description"> Transactions servies </h2>
+    <p> </p>
+
+    <div *ngIf="error !== null" class="mt-5 danger-balance text-danger">
+      {{ error }}
+    </div>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
 <form (ngSubmit)="getTransactions()" class="custom-form-bg text-white p-4 shadow-sm rounded">
         
     <div class="form-group">
@@ -25,15 +35,22 @@
         <tr>
           <th>Email du bénéficiaire</th>
           <th>Montant</th>
-          <th>Date</th>
+          
+          <th>Restitution du montant </th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let transaction of transactions">
-          <td>{{ transaction.beneficiaryEmail }}</td>
+          <td>{{ transaction.receiverEmail }}</td>
           <td>{{ transaction.amount }}</td>
-          <td>{{ transaction.date }}</td>
+          <!-- <td>{{ transaction.date }}</td> -->
+          <td>
+            <button class="btn btn-danger btn-animated" (click)="annulerTransaction(transaction)">
+              Annuler
+            </button>
+          </td>
         </tr>
+        
       </tbody>
     </table>
 

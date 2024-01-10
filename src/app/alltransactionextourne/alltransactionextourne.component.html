@@ -1,0 +1,55 @@
+<!-- alltransaction.component.html -->
+<div class="container mt-4 custom-container-bg">
+
+  <p> </p>
+
+  <div *ngIf="error !== null" class="mt-5 danger-balance text-danger">
+    {{ error }}
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+
+    <h2 class="description">Transactions extournés</h2>
+    <p></p>
+    <form (ngSubmit)="getTransactions()" class="custom-form-bg text-white p-4 shadow-sm rounded">
+            
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <p>  </p>
+          <input type="text" id="email" [(ngModel)]="email" name="email" class="form-control bg-white text-dark custom-input" required>
+        </div>
+        <p> </p>
+    
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <p> </p>
+          <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control bg-white text-dark custom-input" required>
+        </div>
+          <p> </p>
+           <p> </p>
+    
+        <button type="submit" class="btn btn-light btn-animated mt-3">Voir mes transactions extournés</button>
+      </form>
+      
+        <table *ngIf="showTable" class="table mt-3">
+          <thead>
+            <tr>
+              <th>Email du bénéficiaire</th>
+              <th>Montant</th>
+              <!-- <th>Date</th> -->
+              <th>Motif</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let transactionextourne of transactionsextournes">
+              <td>{{ transactionextourne.receiverEmail }}</td>
+              <td>{{ transactionextourne.amount }}</td>
+              <!-- <td>{{ transactionextourne.date }}</td> -->
+              <td>{{ transactionextourne.motif }}</td>
+            </tr>
+          </tbody>
+        </table>
+    
+    </div>
