@@ -7,17 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class TransactionextourneService {
 
-  private apiUrl = 'http://localhost:8070/api/v1/client/extourne'; // Remplacez par l'URL de votre API
+  private apiUrl = 'http://localhost:8222/api/v1/client/extourne';
 
   constructor(private http: HttpClient) {}
-
-  // getTransactionsextourne(email: string, password: string): Observable<any[]> {
-  //   // Assurez-vous d'ajuster la logique pour envoyer les identifiants au backend
-  //   // et récupérer les transactions
-  //   const url = `${this.apiUrl}?email=${email}&password=${password}`;
-  //   return this.http.get<any[]>(url);
-  // } 
-
 
   getTransactionsextourne(email: string, password: string): Observable<any[]> {
     const data = {
@@ -32,11 +24,11 @@ export class TransactionextourneService {
         'Accept': 'application/json'
       })
     };
-  
+
     // Assurez-vous d'ajuster la logique pour envoyer les données au backend
     return this.http.post<any[]>(`${this.apiUrl}`, jsonString,httpOptions);
   }
-  
-  
-  
+
+
+
 }

@@ -8,13 +8,10 @@ import { Observable } from 'rxjs';
 })
 export class WalletService {
 
-  private apiUrl = 'http://localhost:8070/api/v1/client/balance'; 
+  private apiUrl = 'http://localhost:8222/api/v1/client/balance';
 
   constructor(private http: HttpClient) {}
 
-  // getWalletBalance(email: string, password: string): Observable<number> {
-  //   return this.http.post<number>(`${this.apiUrl}/wallet/amount`, { email, password });
-  // }
   getWalletBalance(email: string, password: string): Observable<number> {
 
     const httpOptions = {

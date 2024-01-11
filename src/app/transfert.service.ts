@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TransfertService {
-  private apiUrl = 'http://localhost:8070/api/v1/client/send'; // Remplacez par l'URL de votre API
+  private apiUrl = 'http://localhost:8222/api/v1/client/send';
 
   constructor(private http: HttpClient) {}
 
@@ -20,9 +20,8 @@ export class TransfertService {
         'Accept': 'application/json'
       })
     };
-    
+
     const jsonString = JSON.stringify(data);
-    // Assurez-vous d'ajuster la logique pour envoyer les données au backend
     return this.http.put<any>(`${this.apiUrl}`, jsonString, httpOptions);
   }
 }

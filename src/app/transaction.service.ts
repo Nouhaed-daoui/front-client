@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TransactionService {
-  private apiUrl = 'http://localhost:8070/api/v1/client/servis';
-   
-   private apiUrlannuler = 'http://localhost:8070/api/v1/client/annuler';
+  private apiUrl = 'http://localhost:8222/api/v1/client/servis';
+
+   private apiUrlannuler = 'http://localhost:8222/api/v1/client/annuler';
 
   constructor(private http: HttpClient) {}
 
@@ -30,8 +30,6 @@ export class TransactionService {
     return this.http.post<any[]>(`${this.apiUrl}`, jsonString,httpOptions);
   }
 
-  
-
   annulerTransaction(transaction: any): Observable<any> {
     const jsonString = JSON.stringify(transaction);
     const httpOptions = {
@@ -40,7 +38,7 @@ export class TransactionService {
         'Accept': 'application/json'
       })
     };
-    
+
     return this.http.put<any>(`${this.apiUrlannuler}`, jsonString,httpOptions);
   }
 }

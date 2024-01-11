@@ -11,11 +11,11 @@ export class AlltransactionextourneComponent {
   transactionsextournes: any[] = [];
   email: string = '';
   password: string = '';
-  showTable: boolean = true; // Ajout de la variable showTable
-  error: string | null = null; // Ajout de la propriété error
+  showTable: boolean = true;
+  error: string | null = null;
   constructor(private TransactionextourneService: TransactionextourneService) {}
 
- 
+
 
 
     getTransactions(): void {
